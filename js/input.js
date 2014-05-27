@@ -1,11 +1,16 @@
 (function($){
 	
 	
-	function initialize_field( $el ) {
-		
+	function initialize_field( elem ) {
+		//console.log(elem);
 		//$el.doStuff();
-		
+		var iframe = elem.find('iframe');
+		var data = window[iframe.attr('data-key')];
+		iframeWindow = iframe[0].contentWindow;
+		iframeWindow.post = data.post;
+		iframeWindow.api = 'stuff';
 	}
+	
 	
 	
 	if( typeof acf.add_action !== 'undefined' ) {
@@ -27,7 +32,7 @@
 		acf.add_action('ready append', function( $el ){
 			
 			// search $el for fields of type 'FIELD_NAME'
-			acf.get_fields({ type : 'FIELD_NAME'}, $el).each(function(){
+			acf.get_fields({ type : 'relationships'}, $el).each(function(){
 				
 				initialize_field( $(this) );
 				
@@ -56,7 +61,7 @@
 		
 		$(document).live('acf/setup_fields', function(e, postbox){
 			
-			$(postbox).find('.field[data-field_type="FIELD_NAME"]').each(function(){
+			$(postbox).find('.field[data-field_type="relationships"]').each(function(){
 				
 				initialize_field( $(this) );
 				

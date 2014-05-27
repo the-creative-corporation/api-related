@@ -1,6 +1,6 @@
 <?php
 
-class acf_field_FIELD_NAME extends acf_field {
+class acf_field_relationships extends acf_field {
 	
 	// vars
 	var $settings, // will hold info such as dir / path
@@ -19,9 +19,9 @@ class acf_field_FIELD_NAME extends acf_field {
 	function __construct()
 	{
 		// vars
-		$this->name = 'FIELD_NAME';
-		$this->label = __('FIELD_LABEL');
-		$this->category = __("Basic",'acf'); // Basic, Content, Choice, etc
+		$this->name = 'relationships';
+		$this->label = __('relationships');
+		$this->category = __("Layout",'acf'); // Basic, Content, Choice, etc
 		$this->defaults = array(
 			// add default here to merge into your field. 
 			// This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
@@ -119,11 +119,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// create Field HTML
-		?>
-		<div>
-			
-		</div>
-		<?php
+		include 'output.php';
 	}
 	
 	
@@ -145,18 +141,18 @@ class acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register ACF scripts
-		wp_register_script( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );
-		wp_register_style( 'acf-input-FIELD_NAME', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version'] ); 
+		wp_register_script( 'acf-input-relationships', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );
+		wp_register_style( 'acf-input-relationships', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version'] ); 
 		
 		
 		// scripts
 		wp_enqueue_script(array(
-			'acf-input-FIELD_NAME',	
+			'acf-input-relationships',	
 		));
 
 		// styles
 		wp_enqueue_style(array(
-			'acf-input-FIELD_NAME',	
+			'acf-input-relationships',	
 		));
 		
 		
@@ -372,6 +368,6 @@ class acf_field_FIELD_NAME extends acf_field {
 
 
 // create field
-new acf_field_FIELD_NAME();
+new acf_field_relationships();
 
 ?>

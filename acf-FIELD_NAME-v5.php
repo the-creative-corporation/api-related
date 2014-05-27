@@ -1,6 +1,6 @@
 <?php
 
-class acf_field_FIELD_NAME extends acf_field {
+class acf_field_relationships extends acf_field {
 	
 	
 	/*
@@ -22,14 +22,14 @@ class acf_field_FIELD_NAME extends acf_field {
 		*  name (string) Single word, no spaces. Underscores allowed
 		*/
 		
-		$this->name = 'FIELD_NAME';
+		$this->name = 'relationships';
 		
 		
 		/*
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
 		
-		$this->label = __('FIELD_LABEL', 'acf-FIELD_NAME');
+		$this->label = __('relationships', 'acf-relationships');
 		
 		
 		/*
@@ -54,7 +54,7 @@ class acf_field_FIELD_NAME extends acf_field {
 		*/
 		
 		$this->l10n = array(
-			'error'	=> __('Error! Please enter a higher value', 'acf-FIELD_NAME'),
+			'error'	=> __('Error! Please enter a higher value', 'acf-relationships'),
 		);
 		
 				
@@ -90,8 +90,8 @@ class acf_field_FIELD_NAME extends acf_field {
 		*/
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Font Size','acf-FIELD_NAME'),
-			'instructions'	=> __('Customise the input font size','acf-FIELD_NAME'),
+			'label'			=> __('Font Size','acf-relationships'),
+			'instructions'	=> __('Customise the input font size','acf-relationships'),
 			'type'			=> 'number',
 			'name'			=> 'font_size',
 			'prepend'		=> 'px',
@@ -529,6 +529,6 @@ class acf_field_FIELD_NAME extends acf_field {
 
 
 // create field
-new acf_field_FIELD_NAME();
+new acf_field_relationships();
 
 ?>
