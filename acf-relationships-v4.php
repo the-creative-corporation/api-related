@@ -71,22 +71,18 @@ class acf_field_relationships extends acf_field {
 		?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
-		<label><?php _e("Preview Size",'acf'); ?></label>
-		<p class="description"><?php _e("Thumbnail is advised",'acf'); ?></p>
+		<label><?php _e("app URL",'acf'); ?></label>
+		<p class="description"><?php _e("URL of the frontend app to iframe. must support a _related/:type/:id endpoint",'acf'); ?></p>
 	</td>
 	<td>
 		<?php
 		
 		do_action('acf/create_field', array(
-			'type'		=>	'radio',
-			'name'		=>	'fields['.$key.'][preview_size]',
-			'value'		=>	$field['preview_size'],
-			'layout'	=>	'horizontal',
-			'choices'	=>	array(
-				'thumbnail' => __('Thumbnail'),
-				'something_else' => __('Something Else'),
-			)
-		));
+			'type'		=>	'text',
+			'name'		=>	'fields['.$key.'][url]',
+			'value'		=>	$field['url'],
+			'layout'	=>	'horizontal'
+			));
 		
 		?>
 	</td>
@@ -116,7 +112,7 @@ class acf_field_relationships extends acf_field {
 		*/
 		
 		// perhaps use $field['preview_size'] to alter the markup?
-		
+		var_dump($field);
 		
 		// create Field HTML
 		include 'output.php';

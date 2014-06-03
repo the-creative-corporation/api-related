@@ -4,11 +4,13 @@
 	function initialize_field( elem ) {
 		//console.log(elem);
 		//$el.doStuff();
+		return;//doing it different way now.
 		var iframe = elem.find('iframe');
 		var data = window[iframe.attr('data-key')];
 		iframeWindow = iframe[0].contentWindow;
 		iframeWindow.post = data.post;
-		iframeWindow.api = 'stuff';
+		iframeWindow.api = data.api;
+		iframeWindow.iframeElem = iframe;
 	}
 	
 	
