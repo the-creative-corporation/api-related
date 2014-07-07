@@ -112,7 +112,7 @@ class acf_field_relationships extends acf_field {
 		*/
 		
 		// perhaps use $field['preview_size'] to alter the markup?
-		var_dump($field);
+		//var_dump($field);
 		
 		// create Field HTML
 		include 'output.php';
